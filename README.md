@@ -4,8 +4,14 @@ A computational project to explore how genetic variations contribute to multi-di
 
 ## Visualizing tracked metrics with Choreograph
 
-Larvae are tracked using an adapted in-house software, [Multiworm Tracker](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0071706). To compute and visualize initial metrics that are utilized by the machine learning classifier, such as speed, midline, kink, curve, length, etc etc, use the java program [Choreograph (Chore.jar)]() to output metrics measured for each larva
-- [ ] [Add files using the command line](https://docs.gitlab.com/ee/gitlab-basics/add-file.html#add-a-file-using-the-command-line) or push an existing Git repository with the following command:
+Larvae are tracked using an adapted in-house software, [Multiworm Tracker](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0071706). To compute and visualize initial metrics that are utilized by the machine learning classifier, such as speed, midline, kink, curve, length, etc etc, use the java program [Choreograph (Chore.jar)]() to output metrics measured for each larva.
+
+To run Chore.jar in the command line, you must have [Java 8 (jdk-1.8)] (https://docs.oracle.com/javase/8/docs/technotes/guides/install/mac_jdk.html). Then, run the following command
+
+```
+java -Xincgc -Xms4000m -Xmx4000m -jar /Volumes/TOSHIBA/Chore.jar -t 20 -p 0.105 --plugin Reoutline::exp --plugin Respine::0.23::tapered=0.28,1,2 --plugin SpinesForward::rebias --minimum-biased 3 -S --plugin LarvaCast::angle -N all -o nNpsSlLwWaAmkbcdxyuvorP /path/to/folder/of/each/experiment
+```
+Remember that each folder is named, from the root of dataset: /genotype/protocol/date. The command above produces one .dat file for each larva tracked.
 
 ```
 cd existing_repo
