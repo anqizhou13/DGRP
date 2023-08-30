@@ -1,6 +1,6 @@
 # LarvaTagger user guide
-Dependencies: [Docker Desktop](https://www.docker.com/) and [julia](https://julialang.org/)
-To isntall, follow the [instructions](https://gitlab.pasteur.fr/nyx/larvatagger.jl)
+Dependencies: [Docker Desktop](https://www.docker.com/) and [julia](https://julialang.org/)<br>
+To isntall, follow the [instructions](https://gitlab.pasteur.fr/nyx/larvatagger.jl)<br>
 All commands for LarvaTagger must be inputted from your terminal
 
 ### Open a file in LarvaTagger
