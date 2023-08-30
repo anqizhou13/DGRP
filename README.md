@@ -1,8 +1,8 @@
 # DGRP-Behavior
 A computational project to explore how genetic variations contribute to multi-dimensional behavior
 
-## Process classified behavioral data and verify accuracy of classifier
-Raw data tracked from [Multiworm Tracker](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0071706), namely `.spine` and `.blobs` files, are transferred to Institut Pasteur's supercomputer for processing and classification. The output is named `trx.mat`, a MATLAB file containing more than 100 fields containing computed metrics as well as results for classfication.
+## Process classified behavior data and verify accuracy of classifier
+Raw data tracked from [Multiworm Tracker](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0071706), namely `.spine` and `.blobs` files, are transferred to Institut Pasteur's supercomputer for processing and classification. The output is named `trx.mat`, a MATLAB file containing more than 100 fields with computed metrics as well as results for classfication.
 
 Within the `trx.mat` files, each larva is stored as a row. Discrete actions from the classifier are stored in the field `global_state_large_state`. At each timestep, each larva is assigned an integer 1-7, corresponding to the actions listed `[]`.
 
