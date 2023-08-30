@@ -1,16 +1,10 @@
 # DGRP-Behavior
+A computational project to explore how genetic variations contribute to multi-dimensional behavior
 
 
+## Visualizing tracked metrics with Choreograph
 
-## Getting started
-
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
-
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
-
-## Add your files
-
-- [ ] [Create](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
+Larvae are tracked using an adapted in-house software, [Multiworm Tracker](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0071706). To compute and visualize initial metrics that are utilized by the machine learning classifier, such as speed, midline, kink, curve, length, etc etc, use the java program Choreograph (Chore.jar) to output metrics measured for each larva
 - [ ] [Add files using the command line](https://docs.gitlab.com/ee/gitlab-basics/add-file.html#add-a-file-using-the-command-line) or push an existing Git repository with the following command:
 
 ```
