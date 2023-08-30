@@ -24,8 +24,7 @@ Within the `trx.mat` files, each larva is stored as a row. Discrete actions from
 
 The most basic visualization that provides a first look into how animals from a specific genotype behave is to construct an ethogram. You can find this function in my Python package [behavior.py](https://gitlab.pasteur.fr/anzhou/dgrp-behavior/-/blob/main/behavior.py). There are also other methods of visualization, such as line plots and bar plots of cumulative probabilities over specific time windows. You can find how I am utilizing the functions in the Jupyter notebook [visualize_trx.ipynb](https://gitlab.pasteur.fr/anzhou/dgrp-behavior/-/blob/main/visualize_trx.ipynb).
 
-The combination of ethograms, line plots, and bar plots of all genotypes from the datasets gives us a comprehensive outlook on global behavior 
-
+The combination of ethograms, line plots, and bar plots of all genotypes from the datasets gives us a comprehensive outlook on global behavior across the RAL/DGRP panel. However, before isolating certain genotypes as interesting, we have to make sure that the behavioral phenotypes detected are accurate. To do this, we use [LarvaTagger]([LarvaTagger](https://gitlab.pasteur.fr/nyx/larvatagger.jl))
 
 ## Visualizing raw tracked metrics with Choreograph
 
