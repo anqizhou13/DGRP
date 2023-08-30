@@ -4,7 +4,7 @@ A computational project to explore how genetic variations contribute to multi-di
 
 ## Visualizing tracked metrics with Choreograph
 
-Larvae are tracked using an adapted in-house software, [Multiworm Tracker](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0071706). To compute and visualize initial metrics that are utilized by the machine learning classifier, such as speed, midline, kink, curve, length, etc etc, use the java program Choreograph (Chore.jar) to output metrics measured for each larva
+Larvae are tracked using an adapted in-house software, [Multiworm Tracker](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0071706). To compute and visualize initial metrics that are utilized by the machine learning classifier, such as speed, midline, kink, curve, length, etc etc, use the java program [Choreograph (Chore.jar)]() to output metrics measured for each larva
 - [ ] [Add files using the command line](https://docs.gitlab.com/ee/gitlab-basics/add-file.html#add-a-file-using-the-command-line) or push an existing Git repository with the following command:
 
 ```
