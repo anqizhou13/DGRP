@@ -4,7 +4,7 @@ A computational project to explore how genetic variations contribute to multi-di
 **Main goals of this internship**
 1. Process all `trx.mat` files related to the dataset, so that each genotype has `dataFiles`.
 2. Set up a pipeline to visualize classification results from `dataFiles` for the RAL genotypes.
-3. Verify classification accuracy in [LarvaTagger](https://gitlab.pasteur.fr/nyx/larvatagger.jl), and record in the form of confusion matrices. 
+3. Verify classification accuracy in LarvaTagger, and record in the form of confusion matrices. 
 4. If needed, use LarvaTagger to correct for misclassified actions, retrain classifer and predict new behavior tags.
 5. (Optional) Set up a pipeline to anazlye and visualize tracked metrics using Choreograph.
 
