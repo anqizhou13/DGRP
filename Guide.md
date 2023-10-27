@@ -394,7 +394,8 @@ def calculate_features(line):
 To add a new calculated-feature, you have to : 
 - add a new key to this dictionary (The name of this feature can't contain / or \ )
 - write the calculation. **line** is a line from .dat array, use the syntaxe :  col_names_choreograph[**specific_feature**]['column'] to pickup a feature-associated value.
---> reed the example to see exactly how a calculated feature must be defined 
+
+> reed the example to see exactly how a calculated feature must be defined 
 
 After this, you have to add a key to **col_name_choreograph dictionary**.
 **This key must be exactly the same as the one defined in calculate_features(line)**
@@ -473,5 +474,52 @@ Normalization_name={
 ```
 
 > Obviously, the new key in this dictionary must correspond to the norm_type id in the previous function.
+
+
+## Run the scripts 
+
+# Create the .dat files 
+.Dat files are created using ChoreJar program.
+You can create all the .dat files running ChoreJar_autorun method (_experiment class).
+
+You can easily run it calling : 
+
+```python
+
+for i in list_experiment : 
+  i.ChoreJar_autorun() 
+
+```
+> ChoreJar must be installed on your system !
+> It takes a long time.
+ 
+
+# Concatenate all the .dat files
+
+After .dat files creation, you can concatenate them running choreograph_process method (_protocol class)
+
+You can basically call : 
+
+```python
+
+for i in list_protocol : 
+  i.choreograph_process() 
+
+```
+Then, normalize the data, running **normalisation_choreograph_metrics**
+
+you can run it calling (in the shell if your IDE allows it, or writting it in main.py): 
+
+
+```python
+
+for w in windows : 
+   for i in list_protocol : 
+      i.normalisation_choreograph_metrics(w)
+
+```
+> You can skip windows, replacing 'windows' by ["1","2","5"] in the previous lines (for example)
+
+
 
 
