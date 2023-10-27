@@ -175,11 +175,21 @@ ethogram(protocol,window,time_reference,sort_larvae)
 
 ``` 
 
- - **protocol** must be a **list of _protocol objects**. To process all the protocol (or genotypes if 1protocol/genotype), protocol would be list_protocol 
+ - **protocol** must be a **list of _protocol objects**. To process all the protocol (or genotypes if 1protocol/genotype), protocol would be **list_protocol** 
 
  - **window** is the the time window used to create the ethograms. This must be the corresponding key from setup.windows dictionary. 
 
- - sort_larvae :  
+ - **sort_larvae**  :  each line of the ethogram can be sorted (by first action after time_reference and by duration of irst action) setting sort_larvae as **True**. You can modify the sorting algorithm modifying **sort_by_duration** function (defined in visualization.ethogram function). must be a **boolean (True/False)**
+
+ **time_reference** : the time (stimulus onset) used to sort all the ethogram lines. Must be an **integer** 
+
+
+ Basically, you can run the following command : 
+
+
+```python
+ethogram(list_protocol,"3",60,True)
+```
 
 
 
