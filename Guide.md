@@ -237,10 +237,62 @@ This prrogram can analyse choreograph data.
 
 Before starting, you have to setup **setup.py**
 
+You can analyse choreograph data with or without statistical analysis. 
+if you don't need statistical analysis, set : 
+```python
+
+statistical_analysis=False
 
 
+```
 
+else, set : 
 
+```python
+
+statistical_analysis=True 
+
+```
+
+If statistical_analysis is set as **True** : 
+the program is based on 2 types of control : 
+ - the first one is used to compare all the genotypes with the same control.
+ - the 2n one is used to compare each genotype with 1 or many specific controls.
+
+You have to specify the number of type-2 control : 
+
+```python
+
+dict_control ={ 
+    
+    
+    
+    "control_1" : 1, #### Don't modify this one ! 
+
+    "control_2":  2 ###Here, you can choose the number of type-2 control 
+    
+    }
+
+```
+
+After this, run the command : 
+```python
+Group_config() 
+
+```
+You should get a tkinter window. 
+> if you are working on a IDE, first try to run the function and to close the window. If you can't close it, run the function from the terminal.
+
+you have 3 columns of listbox : 
+ - **first column** : Genotype that will be compared to the controls
+ - **2nd column** : Type-1 control. **Must be the same for all the genotypes**. Set as **None** if you don't have any type-1 control.
+ - **3rd column** : Type-2 control. There is 1 listbox for each subtype of type-2 control. **Be consistent choosing the type-2 control subtypes for each genotype**
+ - Press **add genotype**
+ - close the window 
+
+You may have a folder **setup.json** in your specified saving directory : you should check that this dictionary is well defined 
+
+> https://jsonviewer.stack.hu/#http:// is a good tool  to visualize the json file 
 
 
 
