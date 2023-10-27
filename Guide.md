@@ -35,6 +35,34 @@ This programm can create :
 
 ### Setup 
 
+If you don't want to visualize choreograph data, you can set : 
+
+```python 
+   Choreograph_each_experiment=False
+   statistical_analysis=False
+```
+
+each TRX file contains classified actions (in **'global_state_large_state'**). In for any reason the action number (in Trx files) does not correspond to the action's name, you can change the following dictionary : 
+
+```python 
+Dict_action = {
+    
+    "crawl" : 1, 
+    "head_cast" : 2,
+    "stop" : 3,
+    "hunch": 4,
+    "back_up" : 5,
+    "roll" : 6,
+    "small_action" : 7,
+    "bend" : 8
+    
+    } 
+``` 
+
+
+
+   
+
 
 
 
