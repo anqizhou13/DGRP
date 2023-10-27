@@ -19,6 +19,10 @@ Dict_directory = {
      '...': can be removed
 }
 
+
+
+
+
 ## TRX file analysis 
 
 This programm can create : 
