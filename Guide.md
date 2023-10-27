@@ -29,16 +29,16 @@ Before starting, we need to instantiate all _Protocol objects and store them in 
 To do this, you can run **quick_start** function : 
 ```python
 
-list_genotype=list()
-list_protocol=list()
-list_experiment=list()
+  list_genotype=list()
+  list_protocol=list()
+  list_experiment=list()
 
 
-def quick_start(): 
+  def quick_start(): 
     
    
-    print("init...")
-    for file in os.listdir(Dict_directory["main_directory"]): ## creations of genotype instances
+      print("init...")
+      for file in os.listdir(Dict_directory["main_directory"]): ## creations of genotype instances
        
         d = os.path.join(Dict_directory["main_directory"], file)
        
@@ -50,10 +50,11 @@ def quick_start():
             list_genotype.append(GenotypeObject)
             
 
-    for protocol in tqdm(list_protocol): 
+      for protocol in tqdm(list_protocol): 
         
         list_experiment.extend(protocol.auto_experiment())
     
+
 ```
 
 
