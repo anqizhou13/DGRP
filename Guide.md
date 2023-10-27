@@ -42,7 +42,7 @@ If you don't want to visualize choreograph data, you can set :
    statistical_analysis=False
 ```
 
-each TRX file contains classified actions (in **'global_state_large_state'**). In for any reason the action number (in Trx files) does not correspond to the action's name, you can change the following dictionary : 
+each TRX file contains classified actions (in **'global_state_large_state'**). If for any reason the action number (in Trx files) does not correspond to the action's name, you can change the following dictionary : 
 
 ```python 
 Dict_action = {
@@ -59,8 +59,21 @@ Dict_action = {
     } 
 ``` 
 
+Ethograms are created for a specific time window. By default, the time used is 30s --> 100s.
+You can change modifying the following dictionary : 
+```python 
+Windows = {
+    "1":[10,58], 
+    "2":[60,62],
+    "3":[30,100], ## Change this time window to set it up. 
+    "4" :[30,180],
+    "5" : [60,70] ,
+    "6" : [60,65],
+    "7": [60,68] 
 
+    }
 
+```  
    
 
 
