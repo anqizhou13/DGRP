@@ -363,4 +363,8 @@ Each key (Feature) is associated to a dictionary, with the following keys :
 
  - **column** : The data are collected in .dat files, stored as arrays. For each larva (each .dat file) : there is 1 column for every feature, and 1 line for every time step.  the value associated to **column** correspond to the index of the column in .dat arrays. If **column** is set as **None**, it means that this feature is calculated from the basic ones (we will se how to create new features after)
 
- - **skipped**  : 
+ - **skipped**  : set as **True** if you don't need this feature to be plotted. 
+ - **normalization** : The type of normalization used to represent the data for each time window. Must be stored as a list, a feature can have many normalization types.
+
+
+ 
