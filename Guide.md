@@ -122,6 +122,7 @@ object_=list_protocol[0]
 
 (print(object_.Genotype)) 
 CSMH_RAL_cont@CSMH_RAL_cont
+
 ```  
 
 
