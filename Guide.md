@@ -11,19 +11,17 @@ In order to use this program, you have to configure setup.py.
 
  - setup the directory dictionary.  
 
-"""
-     Dict_directory= {
-        'main_directory' : The root of the folder which contains all genotypes' folders \n
-        'saving directory': the root where all the processed data will be saved \n
-        'sh_choreograph' : The bash script for ChoreJar automation\n 
-        ...:  can be removed\n
-      }
-"""
-
+```python
+Dict_directory = {
+    'main_directory': 'The root of the folder which contains all genotypes\' folders',
+    'saving_directory': 'The root where all the processed data will be saved',
+    'sh_choreograph': 'The bash script for ChoreJar automation',
+     '...': can be removed
+}
 
 ## TRX file analysis 
 
 
-##
+
 
 
