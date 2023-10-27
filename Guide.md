@@ -109,7 +109,24 @@ Windows = {
     }
 
 ```  
-   
+  
+Doing this, you can access to all _protocol objects calling list_protocol elements: 
+
+```python 
+
+quick_start() 
+init...
+100%|██████████| 218/218 [00:00<00:00, 234.76it/s]
+
+object_=list_protocol[0]
+
+(print(object_.Genotype)) 
+CSMH_RAL_cont@CSMH_RAL_cont
+```  
+
+
+
+
 
 
 
