@@ -18,7 +18,7 @@ In order to use this program, you have to configure setup.py.
     'sh_choreograph': 'The bash script for ChoreJar automation',
      '...': can be removed
     }
-''''''
+            ''''''
 
 
 
