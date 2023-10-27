@@ -21,6 +21,13 @@ Dict_directory = {
 
 ## TRX file analysis 
 
+This programm can create : 
+ -ethograms 
+ - 
+
+### Setup 
+
+
 
 
 
