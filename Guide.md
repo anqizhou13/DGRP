@@ -393,5 +393,85 @@ def calculate_features(line):
 
 To add a new calculated-feature, you have to : 
 - add a new key to this dictionary (The name of this feature can't contain / or \ )
-- write the calculation. **line** is a line from .dat array, use the syntaxe :  col_names_choreograph[**specific_feature**]['column']
+- write the calculation. **line** is a line from .dat array, use the syntaxe :  col_names_choreograph[**specific_feature**]['column'] to pickup a feature-associated value.
+--> reed the example to see exactly how a calculated feature must be defined 
+
+After this, you have to add a key to **col_name_choreograph dictionary**.
+**This key must be exactly the same as the one defined in calculate_features(line)**
+**You must define the dictionary for this new feature ** (with the keys 'column','skipped','normalization'.. )** 
+
+
+
+## Add new types of normalization 
+
+The existing types of normalization are created is the tools.normalization function : 
+
+```python
+def normalization(dict1,dict2,norm_type) : 
+    
+   
+    
+    if norm_type==0 : 
+       
+        return dict1
+    
+    if norm_type==1 : 
+           
+              """ 1 type : normalization : value.norm=value-mean(value.baseline)"""
+                
+              for feature in col_names_choreograph.keys() : 
+                      
+                      list_baseline=list()
+                      for larva in dict2.keys() : 
+                          
+                          list_baseline.append(dict2[larva][feature])
+                           
+                      mean=np.nanmean(list_baseline)
+                      
+                      for larva in dict1.keys() : 
+                          
+                          dict1[larva][feature]= dict1[larva][feature]- mean
+                      
+              return dict1
+                      
+    if norm_type==2 : 
+        
+        
+        for feature in col_names_choreograph.keys() : 
+                
+                list_baseline=list()
+                for larva in dict2.keys() : 
+                    
+                    list_baseline.append(dict2[larva][feature])
+                     
+                mean=np.nanmean(list_baseline)
+                
+                for larva in dict1.keys() : 
+                    
+                    dict1[larva][feature]= (dict1[larva][feature]- mean)/mean
+                
+        return dict1
+            
+        
+```
+
+If you want to add a new time of normalization (in relation with the baseline), you can create a new norm_type id, 
+a complete de function.
+**You must return a dictionary with the same structure as the inputed one**
+
+You also have to add a new key/value to the following dictionary : 
+
+```python
+Normalization_name={
+ 
+    0:"non-normalized",
+    1: "value-mean.baseline",
+    2:"ratio[(value-mean.baseline),mean.baseline]"
+    
+    }
+
+```
+
+> Obviously, the new key in this dictionary must correspond to the norm_type id in the previous function.
+
 
