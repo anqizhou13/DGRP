@@ -18,6 +18,7 @@ Dict_directory = {
     'sh_choreograph': 'The bash script for ChoreJar automation',
      '...': can be removed
 }
+'''
 
 
 
