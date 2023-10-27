@@ -286,7 +286,8 @@ You should get a tkinter window.
 you have 3 columns of listbox : 
  - **first column** : Genotype that will be compared to the controls
  - **2nd column** : Type-1 control. **Must be the same for all the genotypes**. Set as **None** if you don't have any type-1 control.
- - **3rd column** : Type-2 control. There is 1 listbox for each subtype of type-2 control. **Be consistent choosing the type-2 control subtypes for each genotype**
+ - **3rd column** : Type-2 control. There is 1 listbox for each subtype of type-2 control. **Be consistent choosing the type-2 control subtypes for each genotype** Set as **None** if any subtype isn't available.
+
  - Press **add genotype**
  - close the window 
 
@@ -295,4 +296,71 @@ You may have a folder **setup.json** in your specified saving directory : you sh
 > https://jsonviewer.stack.hu/#http:// is a good tool  to visualize the json file 
 
 
+Then, configure the col_name_choreograph dictionary.
 
+```python
+col_names_choreograph = {
+   
+    
+    
+   't': {'column' :0 , 'skipped' : True , 'normalization' : [0,1] },  #0
+   
+   'Number': {'column' : 1 , 'skipped' : True , 'normalization' : [0,1]},#1
+   
+   'Good number': {'column' :2  , 'skipped' : True, 'normalization' : [0,1]},#2
+   
+   'Persistence': {'column' : 3 , 'skipped' : True, 'normalization' : [0,1]},#3
+   
+   'Speed' :  {'column' : 4 , 'skipped' : False, 'normalization' : [0,1]},#4
+   
+   'Angular speed': {'column' : 5 , 'skipped' : False, 'normalization' : [0,1]},#5
+   
+   'Length': {'column' :6  , 'skipped' : False, 'normalization' : [0,1]},#6
+   
+   'Instantaneous length': {'column' : 7 , 'skipped' : False, 'normalization' : [0,1]},#7
+  
+   'Width': {'column' : 8  , 'skipped' : False, 'normalization' : [0,1]},#8
+   
+   'Instantaneous width': {'column' : 9 , 'skipped' : False, 'normalization' : [0,1]},#9
+  
+   'Aspect': {'column': 10 , 'skipped' : False, 'normalization' : [0,1]},#10
+  
+   'Instantaneous aspect': {'column' : 11 , 'skipped' : False, 'normalization' : [0,1]},#11
+  
+   'Midline': {'column' : 12 , 'skipped' : False, 'normalization' : [0,1]},#12
+   
+   'Kink': {'column' : 13, 'skipped' : False, 'normalization' : [0,1]},#13
+   
+   'Bias': {'column' :14 , 'skipped' : False, 'normalization' : [0,1]},#14
+   
+   'Curve': {'column' : 15, 'skipped' : False, 'normalization' : [0,1]},#15
+  
+   'Consistency': {'column' :16, 'skipped' : False, 'normalization' : [0,1]},#16
+   
+   'X': {'column' : 17, 'skipped' : True, 'normalization' : [0,1]},#17
+  
+   'Y': {'column' : 18, 'skipped' : True, 'normalization' : [0,1]},#18
+  
+   'X velocity': {'column' :19, 'skipped' : True , 'normalization' : [0,1]},#19
+  
+   'Y velocity': {'column' : 20, 'skipped' : True, 'normalization' : [0,1]},#20
+  
+   'Orientation': {'column' : 21, 'skipped' : True, 'normalization' : [0,1]},#21
+  
+    'Crab': {'column' : 22, 'skipped' : False, 'normalization' : [0,1]},#22
+   
+    'Path length': {'column' :23 , 'skipped' : True, 'normalization' : [0,1]},#23
+    
+    "length/midline": {'column' : None , 'skipped' : False, 'normalization' : [0,1,2]}
+    
+    
+    
+    }
+```
+
+This represent all the features stored in the created files.  Each feature is stored as a key in this dictionary.
+Each key (Feature) is associated to a dictionary, with the following keys : 
+
+ - **column** : The data are collected in .dat files, stored as arrays. For each larva (each .dat file) : there is 1 column for every feature, and 1 line for every time step.  the value associated to **column** correspond to the index of the column in .dat arrays. If **column** is set as **None**, it means that this feature is calculated from the basic ones (we will se how to create new features after)
+
+ - **skipped**  : 
