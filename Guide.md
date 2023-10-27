@@ -21,6 +21,39 @@ In order to use this program, you have to configure setup.py.
     }
 
 ```
+### Initialization 
+
+This program is based on classes (definided in **data_process.py**). Most of the functions need tak _Protocol objects input. 
+Before starting, we need to instantiate all _Protocol objects and store them in a list.
+
+To do this, you can run **quick_start** function : 
+```python
+list_genotype=list()
+list_protocol=list()
+list_experiment=list()
+
+
+def quick_start(): 
+    
+   
+    print("init...")
+    for file in os.listdir(Dict_directory["main_directory"]): ## creations of genotype instances
+       
+        d = os.path.join(Dict_directory["main_directory"], file)
+       
+        if os.path.isdir(d):
+            
+            GenotypeObject = data_process._genotype(d,file,str())
+            
+            list_protocol.append(GenotypeObject.auto_protocol())
+            list_genotype.append(GenotypeObject)
+            
+
+    for protocol in tqdm(list_protocol): 
+        
+        list_experiment.extend(protocol.auto_experiment())
+    
+    ```
 
 
 
