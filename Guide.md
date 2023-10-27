@@ -57,7 +57,7 @@ To do this, you can run **quick_start** function :
 
 ```
 
-Doing this, you can access to all _protocol objects calling list_protocol elements: 
+Doing this, you can access  all _protocol objects calling list_protocol elements: 
 
 ```python 
 
@@ -135,7 +135,28 @@ You can set this up modifying this variable (don't write the extension .mat here
 mat_name="trx" 
 ```  
 
+## Concatenate all the TRX files.
 
+For all genotypes, each protocol-type may contain many experiment folders, with 1 Trx file/experiment.
+This program works with concatenated-trx files.
+Concatenated files are created running auto_concatenate() method, from _Protocol class. 
+To create a file for a specific protocol (from a specific genotype), call the following command : 
+
+```python
+
+list_protocol[i].auto_concatenate() 
+## i is the index of the specific protocol(from each genotype) in list_experiment
+``` 
+
+To create all the files (for all the genotypes/protocol) at the same time, run : 
+
+
+```python
+
+for i in list_protocol : 
+  list_protocol[i].auto_concatenate() 
+
+``` 
 
 
 
