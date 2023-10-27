@@ -157,6 +157,8 @@ for i in list_protocol :
   list_protocol[i].auto_concatenate() 
 
 ``` 
+> Don't forget that all the _protocol objects are created running **quick_start()** 
+
 
 
 
