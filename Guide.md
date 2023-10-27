@@ -160,6 +160,11 @@ for i in list_protocol :
 > Don't forget that all the _protocol objects are created running **quick_start()** 
 
 
+## Ethograms 
+
+> Ethograms are created using concatenated-trx files. You can't create them before calling auto_concatenate() method for each _protocol object.
+
+
 
 
 
