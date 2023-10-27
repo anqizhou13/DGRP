@@ -367,4 +367,31 @@ Each key (Feature) is associated to a dictionary, with the following keys :
  - **normalization** : The type of normalization used to represent the data for each time window. Must be stored as a list, a feature can have many normalization types.
 
 
- 
+ ## Add a new calculated feature 
+
+ You may need to calculate new features (such as ratios,...).
+
+ firstly, you have to define the calculation in the following function (from **setup.py**)
+
+
+```python
+def calculate_features(line):
+   
+  
+    Dict_calculated_features = {
+        
+        #### Setup this dictionnary to calculate a specific feature
+    "length/midline": line[col_names_choreograph['Length']['column']]/line[col_names_choreograph['Midline']['column']]
+    
+        }
+    
+     
+        
+    return Dict_calculated_features
+  
+```
+
+To add a new calculated-feature, you have to : 
+- add a new key to this dictionary (The name of this feature can't contain / or \ )
+- write the calculation. **line** is a line from .dat array, use the syntaxe :  col_names_choreograph[**specific_feature**]['column']
+
