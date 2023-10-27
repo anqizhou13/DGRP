@@ -2,8 +2,7 @@
 
 This program can be used to : 
  - Analyse data from trx.mat files 
-- Analyse data from 
-
+- Analyse choreograph data
 
 ## Global setup 
 
@@ -23,10 +22,10 @@ In order to use this program, you have to configure setup.py.
 ```
 ### Initialization 
 
-This program is based on classes (definided in **data_process.py**). Most of the functions need tak _Protocol objects input. 
+This program is based on classes (definided in **data_process.py**). Most of the functions need _Protocol objects input. 
 Before starting, we need to instantiate all _Protocol objects and store them in a list.
 
-To do this, you can run **quick_start** function : 
+To do this, you have to run both **visualization.py** and **quick_start** function (from visualization.py) : 
 ```python
 
   list_genotype=list()
@@ -190,6 +189,9 @@ ethogram(protocol,window,time_reference,sort_larvae)
 ```python
 ethogram(list_protocol,"3",60,True)
 ```
+
+
+## Choreograph data analysis
 
 
 
