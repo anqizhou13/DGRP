@@ -165,6 +165,21 @@ for i in list_protocol :
 > Ethograms are created using concatenated-trx files. You can't create them before calling auto_concatenate() method for each _protocol object.
 
 
+Ethograms are created running ethogram() function (from **visualization.py). 
+
+In order to create ethograms, you can run the following command : 
+
+```python
+
+ethogram(protocol,window,time_reference,sort_larvae)
+
+``` 
+
+ - **protocol** must be a **list of _protocol objects**. To process all the protocol (or genotypes if 1protocol/genotype), protocol would be list_protocol 
+
+ - **window** is the the time window used to create the ethograms. This must be the corresponding key from setup.windows dictionary. 
+
+ - sort_larvae :  
 
 
 
