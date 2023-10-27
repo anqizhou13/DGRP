@@ -28,8 +28,9 @@ In order to use this program, you have to configure setup.py.
 
 ## TRX file analysis 
 
+
 This programm can create : 
- -ethograms 
+ - ethograms 
  - 
 
 ### Setup 
