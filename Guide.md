@@ -57,6 +57,23 @@ To do this, you can run **quick_start** function :
 
 ```
 
+Doing this, you can access to all _protocol objects calling list_protocol elements: 
+
+```python 
+
+quick_start() 
+init...
+100%|██████████| 218/218 [00:00<00:00, 234.76it/s]
+
+#### Then, we try to get informations about the first object of this list : 
+object_=list_protocol[0]
+
+(print(object_.Genotype)) 
+CSMH_RAL_cont@CSMH_RAL_cont
+
+```  
+You can see all the classes' attributes in **data_process.py** script.
+
 
 
 
@@ -110,20 +127,14 @@ Windows = {
 
 ```  
   
-Doing this, you can access to all _protocol objects calling list_protocol elements: 
+The program finds automaticaly all the trx.mat files from the main directorty.
+But, your trx files may have a specific name (after re-prediction for example).
 
+You can set this up modifying this variable (don't write the extension .mat here) : 
 ```python 
-
-quick_start() 
-init...
-100%|██████████| 218/218 [00:00<00:00, 234.76it/s]
-
-object_=list_protocol[0]
-
-(print(object_.Genotype)) 
-CSMH_RAL_cont@CSMH_RAL_cont
-
+mat_name="trx" 
 ```  
+
 
 
 
