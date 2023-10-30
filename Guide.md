@@ -395,7 +395,7 @@ To add a new calculated-feature, you have to :
 - add a new key to this dictionary (The name of this feature can't contain / or \ )
 - write the calculation. **line** is a line from .dat array, use the syntaxe :  col_names_choreograph[**specific_feature**]['column'] to pickup a feature-associated value.
 
-> reed the example to see exactly how a calculated feature must be defined 
+> read the example to see exactly how a calculated feature must be defined 
 
 After this, you have to add a key to **col_name_choreograph dictionary**.
 **This key must be exactly the same as the one defined in calculate_features(line)**
@@ -518,8 +518,12 @@ for w in windows :
       i.normalisation_choreograph_metrics(w)
 
 ```
-> You can skip windows, replacing 'windows' by ["1","2","5"] in the previous lines (for example)
+> You can skip windows, replacing 'windows' by ["1","2","5"] in the previous lines (for example, if only the windows "1","2" and "5" are needed)
 
+
+
+
+## Optionnal : statitical analysis 
 
 
 
