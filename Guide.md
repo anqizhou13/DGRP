@@ -526,4 +526,44 @@ for w in windows :
 ## Optionnal : statitical analysis 
 
 
+In order to perform statistical analysis, run : 
+
+
+```python
+
+choreograph_testGROUPvsControl1(genotypes,window)
+choreograph_testGROUPvscontrol_type2(genotypes,window)
+
+
+```
+
+> make sur that you have a setup.json file (created running setup.Group_config()) 
+
+genotypes : must be a list of **_protocol objects** 
+window : a key from the setup.windows dictionary 
+
+
+
+> The statistical analysis is based on Mann-whitney U test. You can use another test modyfing these two functions.
+
+p-values and statistics are stored in dictionaries, in both .txt and .json files. 
+
+
+
+
+## Visualization 
+
+
+### 
+```python
+simple_boxplot_choreograph_RAL(genotypes, window,stat=statistical_analysis):
+
+```
+
+- **genotypes** must be a list of **_Protocol** objects.
+- **window** must be a key of the setup.windows dictionary.
+- Set setup_statistical_analysis as True/False if depending of what is needed.
+
+If stat set as **True** : 
+
 
