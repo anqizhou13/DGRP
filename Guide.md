@@ -554,7 +554,7 @@ p-values and statistics are stored in dictionaries, in both .txt and .json files
 ## Visualization 
 
 
-### 
+### Genotype vs Type-1 control 
 ```python
 simple_boxplot_choreograph_RAL(genotypes, window,stat=statistical_analysis):
 
@@ -564,6 +564,127 @@ simple_boxplot_choreograph_RAL(genotypes, window,stat=statistical_analysis):
 - **window** must be a key of the setup.windows dictionary.
 - Set setup_statistical_analysis as True/False if depending of what is needed.
 
-If stat set as **True** : 
+If stat set as **True** : setup.json file is needed. All the specified genotypes will be compared to the type-1 Control. 
+If set as **False** : All the genotypes of the main_directory folder will be represented on the boxplot.
+
+You may want to change the color coding : you can change the colors in these lines : 
+
+```python
+ for key in p_values.keys() :
+                            p_values[key]=-(math.log10(p_values[key]))
+    
+                          dict_color=dict()
+                          for key in p_values.keys():
+    
+                            if (p_values[key] > 5 and p_values[key] < 10) :
+                                dict_color[key]="#F9BFF9"
+                            elif (p_values[key] > 10 and p_values[key] < 50) :
+                                dict_color[key]="#FA78FA"
+                            elif p_values[key] > 50 :
+                                  dict_color[key]="#F728F7"
+    
+```
+
+>Use hexadecimal code for colors 
 
 
+
+
+### Visualization of all experiments
+
+You may need to visualize data from each experiment separately. For this, run the following command : 
+
+```python
+ boxplot_each_experiment(genotypes,window)
+
+
+  ```
+
+  - **genotypes** must be a list of **_protocol** objects 
+  - **window** must be a key of the setup.windows dictionary.
+
+> For the moment, works only if **statistical_analysis is set as True**.
+
+If you don't need any statistical analysis, create a setup.json file (running setup.Group_config()) , setting type-1/2 control as **None**, and run this function. 
+
+
+
+
+### Genotype vs Type-2 Control. 
+
+
+**Works only if statistical_analysis if set as True (and if a setup.json file has been created)**
+To visualize and compare each genotype to its Type-2 Control, use the following function : 
+
+```python
+
+boxplot_type2_control(genotypes,window) 
+
+```
+- **genotypes** must be a list of **_protocol** objects 
+- **window** must be a key of the setup.windows dictionary.
+
+
+
+
+
+## Basic usage 
+
+
+You can basically run : 
+
+```python
+
+
+
+list_genotype=list()
+list_protocol=list()
+list_experiment=list()
+
+for file in os.listdir(Dict_directory["main_directory"]): ## creations of genotype instances
+       
+        d = os.path.join(Dict_directory["main_directory"], file)
+       
+        if os.path.isdir(d):
+            
+            GenotypeObject = data_process._genotype(d,file,str())
+            
+            list_protocol.append(GenotypeObject.auto_protocol())
+            list_genotype.append(GenotypeObject)
+            
+
+for protocol in tqdm(list_protocol): 
+        
+        list_experiment.extend(protocol.auto_experiment())
+    
+    
+for i in list_experiment : 
+  i.ChoreJar_autorun()    
+
+for i in list_protocol : 
+  i.choreograph_process() 
+
+
+for w in windows : 
+   for i in list_protocol : 
+      i.normalisation_choreograph_metrics(w)
+
+
+
+for w in windows: ### Only if statistical_analysis is set as True, and a setup.json file exists (can be created running Group_config() )
+    choreograph_testGROUPvsControl1(list_protocol,w)
+    choreograph_testGROUPvscontrol_type2(list_protocol,w)
+
+for w in windows : 
+
+     boxplot_each_experiment(list_protocol,w)
+     boxplot_each_experiment(list_protocol,w)
+     boxplot_type2_control(list_protocol,w) 
+
+
+```
+
+
+
+> If you copy/paste it, check the indentation 
+> Depending on the number of Genotypes/Protocol/experiments, it might take a long time. Run it overnight 
