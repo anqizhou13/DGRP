@@ -34,6 +34,43 @@ To run Chore.jar in the command line, you must have [Java 8](https://docs.oracle
 
 ```
 export JAVA_HOME=`/usr/libexec/java_home -v 1.8.0`
-java -Xincgc -Xms4000m -Xmx4000m -jar /Volumes/TOSHIBA/Chore.jar -t 20 -p 0.105 --plugin Reoutline::exp --plugin Respine::0.23::tapered=0.28,1,2 --plugin SpinesForward::rebias --minimum-biased 3 -S --plugin LarvaCast::angle -N all -o nNpsSlLwWaAmkbcdxyuvorP /path/to/folder/of/each/experiment
+java -Xincgc -Xms4000m -Xmx4000m -jar /Volumes/TOSHIBA/Chore.jar -t 20 -p 0.105 --plugin Reoutline::exp --plugin Respine::0.23::tapered=0.28,1,2 --plugin SpinesForward::rebias --minimum-biased 3 -S --plugin LarvaCast::angle -N all -o nNpsSlLwWaAmkbcdxyuvorPM /path/to/folder/of/each/experiment
 ```
 The path to each folder follows: /genotype/protocol/date. The command above produces one `.dat` file for each larva tracked within the folder. To batch process `.dat` files for each genotype, check out the Jupyter notebook in directory [Choreograph](https://gitlab.pasteur.fr/anzhou/dgrp-behavior/-/blob/main/Choreograph)
+
+Below are the full definitions of Choreograph metrics
+```
+t time -- always the first column unless included again
+f frame -- the frame number
+D id -- the object ID
+n number -- the number of objects tracked
+N goodnumber -- the number of objects passing the criteria given
+p persistence -- length of time object is tracked
+e area
+s speed
+S angular -- angular speed
+l length -- measured along major axis, not curve of object
+L rellength -- instantaneous length/average length
+w width
+W relwidth -- instantaneous width/average width
+a aspect -- length/width
+A relaspect -- instantaneous aspect/average aspect
+m midline -- length measured along the curve of object
+M morphwidth -- mean width of body about midline
+k kink -- head/tail angle difference from body (in degrees)
+b bias -- fractional excess of time spent moving one way
+P pathlen -- distance traveled forwards (backwards=negative)
+c curve -- average angle (in degrees) between body split into 5 segments
+d dir -- consistency of direction of motion
+x loc_x -- x coordinate of object (mm)
+y loc_y -- y coordinate of object (mm)
+u vel_x -- x velocity (mm/sec)
+v vel_y -- y velocity (mm/sec)
+o orient -- orientation of body (degrees, only guaranteed modulo pi)
+r crab -- speed perpendicular to body orientation
+C custom -- calls plugin
+1 tap -- whether a tap (stimulus 1) has occurred
+2 puff -- whether a puff (stimulus 2) has occurred
+3 stim3 -- whether the first custom stimulus has occurred
+4 stim4 -- whether the second custom stimulus has occurred
+```
