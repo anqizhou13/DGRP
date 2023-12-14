@@ -74,3 +74,9 @@ C custom -- calls plugin
 3 stim3 -- whether the first custom stimulus has occurred
 4 stim4 -- whether the second custom stimulus has occurred
 ```
+
+To visualize the experiments without outputting anything
+```
+export JAVA_HOME=`/usr/libexec/java_home -v 1.8.0`
+java -jar /path/to/Chore.jar --plugin Reoutline::exp --plugin Respine::tapered=0.28,1,2 --plugin SpinesForward::rebias --minimum-biased 3 -S --plugin LarvaCast::angle -o s,l,c --map /path/to/folder/of/each/experiment 
+```
