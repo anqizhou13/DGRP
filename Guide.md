@@ -22,6 +22,7 @@ In order to use this program, you have to configure setup.py.
     }
 
 ```
+<a name="setup_Directory"></a>
 ### Initialization 
 
 This program is based on classes (definided in **data_process.py**). Most of the functions need _Protocol objects input. 
@@ -711,9 +712,17 @@ For all the following functions, the input is a .xlsx file containing at least t
 
 find [here](./alzheimer_data_tag_attP2_v7.xlsx) is an example of a table in the right format 
 
-If you change the name of one of these columns, you must change the name of this columns on the script as well (change the name of the column everytime the column is changed).
+If you change the name of one of these columns, you must change the name of this columns in the script as well (change the name of the column everytime the column is called).
 
-This excel file must be as precise as possible. Every line containing wrongly formated values would be skipped.
+This excel file must be filled out as precisely as possible. Every line containing wrongly formated values would be skipped.
+
+### Basic confusion matrix
+
+In order to get confusion matrix from your checking .xlsx file, call the **visualization.confusion_matrix_classifier_withtime** function (name : **confusion_matrix_classifier_withtime**, file : visualization.py) 
+
+**IMPORTANT** this function requires to set up a "saving_directory" in the setup.Dict_directory (file setup.py) (find more informations [here](setup_Directory"))
+
+
 
 
  
