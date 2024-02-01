@@ -692,7 +692,7 @@ for w in windows :
 > Depending on the number of Genotypes/Protocol/experiments, it might take a long time. Run it overnight 
 
 
-### Classifier accuracy 
+# Classifier accuracy 
 
 This paragraph explain how to use different tools to analyse classifier's accuracy and manualy edit some label files.
 
@@ -708,7 +708,7 @@ This paragraph explain how to use different tools to analyse classifier's accura
 
 
 
-### Contact 
+# Contact 
 
 Adrien Bouchet (Intern M1 2023-2024)
 AgroParisTech
