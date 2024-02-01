@@ -720,7 +720,7 @@ This excel file must be filled out as precisely as possible. Every line containi
 
 In order to get confusion matrix from your checking .xlsx file, call the **visualization.confusion_matrix_classifier_withtime** function (name : **confusion_matrix_classifier_withtime**, file : visualization.py) 
 
-**IMPORTANT** this function requires to set up a "saving_directory" in the setup.Dict_directory (file setup.py) (find more informations [here](setup_Directory"))
+**IMPORTANT** this function requires to set up a "saving_directory" in the setup.Dict_directory (file setup.py) (find more informations [here](#setup_Directory"))
 
 
 
