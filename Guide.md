@@ -794,6 +794,8 @@ Threshold could be define as :
 
 ## Setup 
 
+
+### Root structure
 The most important thing before using it is to make sure that the root stucture is adapted to your dataset
 See below of the label file is opened
                
@@ -819,12 +821,17 @@ See below of the label file is opened
 
 -> Adapt this line to  your folder structure
 
-### Use 
+
+### Output folder
+ 
+before running this function, you have to specify your output folder in setup.Dict_directory, change the pathway associated to the key "saving_directory".
+(more informations [here](#setup_Directory)))
+
+
+## Use 
 
 You may want to create confusion matrixes with different freshold.
 the easiest way to do it is to use the following function (avaialble in **data_process.py**)
-
-
 
 ```python
 
