@@ -703,7 +703,21 @@ This paragraph explain how to use different tools to analyse classifier's accura
 
 ### Confusion Matrixes
 
+The confusion matrix is a way to fastly visualize the accuracy of the classifier.
 
+For all the following functions, the input is a .xlsx file containing at least the following columns : 
+
+**"genotype", "experiment", "larva","temps début", "temps fin", "false(0)/True(1)",  "real action", "classification"**
+
+[here](./alzheimer_data_tag_attP2_v7.xlsx) is an example of a table in the right format 
+
+
+
+If you change the name of one of these columns, you must change the name of this columns on the script as well (change the name of the column everytime the column is changed).
+
+ 
+
+        
 
 
 
