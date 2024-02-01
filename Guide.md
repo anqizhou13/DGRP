@@ -749,7 +749,54 @@ You can add/remove actions modifying this list :
 ```
 
 
-**Important** the name of the actions in your .xlsx must correspond to the names in this list. 
+**Important** the name of the actions in your .xlsx file must correspond to the names in this list. 
+
+
+
+## Confusion matrix using new predicted labels 
+
+
+This function uses previous checking and new predicted labels.
+to use it, call (from data_process.py): 
+
+
+
+```python
+
+   confusion_matrix_predicted_correction(path_orignalTable, path_root_folder, threshold )
+
+```
+it takes as inputs : 
+
+- **path_orignalTable** : pathway of the .xlsx file containing the checked events
+- **path_root_folder** : the root where all the genotypes/protocol/experiments/Predicted.label files are 
+- **threshold** : see bellow 
+
+
+### Threshold : 
+
+An event from .xlsx file may contain several times steps.
+The predicted action in the .label files is defined for every time step :  the threshold determine the proportion of rigthly classified action among overlaped time steps to define as right/wrong the classified main event.
+> **Example**: you observe (real action) a cast between 61 and 62 sec (10 frames).
+>The classified actions contains 5 rightly classified actions (cast) ,and 4 wrongly classified actions (whatever they are) >among this period. 
+>- threshold = 0.7 : it would be considered as misclassification (0.6 rightly clasiffied time steps < 0.7>)
+> - threshold = 0.4 :  it would be considered as right classification ((0.6 rightly clasiffied time steps > 0.4>)
+
+
+
+Threshold could be define as : 
+
+- **Value between 0 and 1** : is the proportion of righlty classified action is smaller than the threshold, the classifified action with the bigest frequence among the event duration will become the classified action for the whole event.
+- **None** : in this case, there isn't any threshold. The classified action with the highest frequence among the event's time step is considerd as the only classified action among the whole event.
+
+
+
+
+
+
+
+
+
 
 
 
