@@ -716,11 +716,26 @@ If you change the name of one of these columns, you must change the name of this
 
 This excel file must be filled out as precisely as possible. Every line containing wrongly formated values would be skipped.
 
-### Basic confusion matrix
+## Basic confusion matrix
 
 In order to get confusion matrix from your checking .xlsx file, call the **visualization.confusion_matrix_classifier_withtime** function (name : **confusion_matrix_classifier_withtime**, file : visualization.py) 
 
-**IMPORTANT** this function requires to set up a "saving_directory" in the setup.Dict_directory (file setup.py) (find more informations [here](#setup_Directory))
+**IMPORTANT** this function requires to set up a **saving_directory** in the setup.Dict_directory (file setup.py) (find more informations [here](#setup_Directory))
+
+this function takes in input the pathway of your excel file.
+See how to call this function bellow : 
+
+```python
+
+  confusion_matrix_classifier_withtime("/Users/bouchet/Downloads/alzheimer_data_tag_attP2_v7.xlsx")
+
+```
+
+This function output : 
+
+- **Raw confusion matrix** (for each genotype and for all genotypes together): +1 for each event (its duration doesn't matter)
+- **time-adjusted confusion matrix** (for each genotype and for all genotypes together) : the weight of each event is modulated by its duration 
+- **.text file with accuracy mesurements** : find more informations about these features [here](https://datascience.suvenconsultants.com/interviews/assets/accuracy_precision_recall_f1_interpretation.pdf)
 
 
 
