@@ -7,7 +7,7 @@ This program can be used to :
 
 
 ## Global setup 
-
+<a name="setup_Directory"></a>
 In order to use this program, you have to configure setup.py.
 
  - setup the directory dictionary.  
@@ -22,7 +22,7 @@ In order to use this program, you have to configure setup.py.
     }
 
 ```
-<a name="setup_Directory"></a>
+
 ### Initialization 
 
 This program is based on classes (definided in **data_process.py**). Most of the functions need _Protocol objects input. 
