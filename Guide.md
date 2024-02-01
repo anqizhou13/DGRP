@@ -720,7 +720,7 @@ This excel file must be filled out as precisely as possible. Every line containi
 
 In order to get confusion matrix from your checking .xlsx file, call the **visualization.confusion_matrix_classifier_withtime** function (name : **confusion_matrix_classifier_withtime**, file : visualization.py) 
 
-**IMPORTANT** this function requires to set up a **saving_directory** in the setup.Dict_directory (file setup.py) (find more informations [here](#setup_Directory))
+**IMPORTANT** this function requires to set up a **saving_directory** in the setup.Dict_directory (file setup.py) (find more informations [here](#setup_Directory)) : this is were the outputs will be saved
 
 this function takes in input the pathway of your excel file.
 See how to call this function bellow : 
@@ -736,6 +736,22 @@ This function output :
 - **Raw confusion matrix** (for each genotype and for all genotypes together): +1 for each event (its duration doesn't matter)
 - **time-adjusted confusion matrix** (for each genotype and for all genotypes together) : the weight of each event is modulated by its duration 
 - **.text file with accuracy mesurements** : find more informations about these features [here](https://datascience.suvenconsultants.com/interviews/assets/accuracy_precision_recall_f1_interpretation.pdf)
+
+
+### Add/delete actions
+
+You can add/remove actions modifying this list : 
+
+```python
+
+   actions=["hunch","back","run","cast","small_actions","stop","static_bend"]"
+
+```
+
+
+**Important** the name of the actions in your .xlsx must correspond to the names in this list. 
+
+
 
 
 
