@@ -847,22 +847,82 @@ the easiest way to do it is to use the following function (avaialble in **data_p
 
 
 
+# Edit predected label 
+
+You may need to edit mannualy some predicted files (change all cast misclassfied as static-bend to cast, for example)
+
+For this, use the following function
+
+```python
+edit_predicted_label(path_orignalTable, path_root_folder,saving_folder) : 
+
+```
+
+- **path_orignalTable**  : pathway of your .xlsx file used to get the real actions previously checked
+- **path_root_folder** : the root that contains all the data (structure expected : path_root_folder > genotype > protocol > experiemnt ) and containing the original predicted.Label files to edit 
+- **saving_folder**  : the folder where the new predicted.label will be save 
 
 
+ if you want to change the name of your .label files, change it here : 
+ 
+```python
+      output_file="{}/NewPredicted.label".format(output_folder)
+
+```
+
+By default, the script correct the casts misclassified as "static bend".
+If you want to correct something else, edit these lines : 
 
 
+```python
+      if real_action_name=="cast":
+                                            if dictionary_actions[convert_integer(predicted_action_name)] == "static_bend" : ##we use these two dictionaries to avoid actionname_integer problems
+                                                file['data'][larva]['labels'][step]=dic_specific_labels["cast_large"]
 
 
-
-
-
-
-
-
+```
 
  
+Also, the predicted.label may contain mis-labeled actions.
+for example, all the static_bend from .label files may be labeled as "roll_large" : change the two following dictionaries.
+
 
         
+```python
+     def convert_integer(action_name) : 
+        
+            dic_actions = {
+              
+                "run_large":1,
+                "cast_large":2,
+                "stop_large":3,
+                "hunch_large":4,
+                "back_large":5,
+               # "static_bend":6,
+                "small_motion":7,
+                "roll_large":6  ###5 what is called 'roll_large' in the predicted.label files is actually a static_bend
+                
+                }
+            return dic_actions[action_name]
+                
+    dictionary_actions = {
+           1:"run",
+           2:"cast",
+           3:"stop",
+           4:"hunch",
+           5:"back",
+       
+           7:"small_actions",
+           6:"static_bend"
+           
+           }
+                       
+
+```
+
+With these two dictionaries, the "roll_large" from the label files will be considered as "static_bend" during the script processing.
+
+
 
 
 
