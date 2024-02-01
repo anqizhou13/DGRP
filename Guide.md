@@ -4,6 +4,8 @@ This program can be used to :
  - Analyse data from trx.mat files 
 - Analyse choreograph data
 
+
+
 ## Global setup 
 
 In order to use this program, you have to configure setup.py.
@@ -688,3 +690,26 @@ for w in windows :
 
 > If you copy/paste it, check the indentation 
 > Depending on the number of Genotypes/Protocol/experiments, it might take a long time. Run it overnight 
+
+
+### Classifier accuracy 
+
+This paragraph explain how to use different tools to analyse classifier's accuracy and manualy edit some label files.
+
+- **Confusion matrix** : You can create confusion matrix 
+- **Auto Correction** of .label files from manually checked actions 
+
+
+
+
+
+
+
+
+
+
+### Contact 
+
+Adrien Bouchet (Intern M1 2023-2024)
+AgroParisTech
+adrien.bouchet@agroparistech.fr
