@@ -792,6 +792,56 @@ Threshold could be define as :
 
 
 
+## Setup 
+
+The most important thing before using it is to make sure that the root stucture is adapted to your dataset
+See below of the label file is opened
+               
+
+```python
+
+     file=json.load(open("{}/{}/{}/NewPredicted.label".format(path_root_folder,gen,exp),'r')) 
+   
+```
+
+- **"gen"** is the name of the genotype's folder 
+- **"exp"** is the experiment's folder name 
+- **NewPredicted.label** is the name of your .label file 
+
+-> If the your experiment folders are contained in a protocol folder, use : 
+               
+```python
+
+     file=json.load(open("{}/{}/p_4_60s1x30s0s#p_4_120s10x2s8s#n#n/{}/Newpredicted.label".format(path_root_folder,gen,exp),'r'))
+
+   
+```
+
+-> Adapt this line to  your folder structure
+
+### Use 
+
+You may want to create confusion matrixes with different freshold.
+the easiest way to do it is to use the following function (avaialble in **data_process.py**)
+
+
+
+```python
+
+   confusion_matrix_many_threshold(): 
+    
+    list_thresolds=[0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,None]
+    for i in list_thresolds : 
+       confusion_matrix_predicted_correction(r"C:\Users\users-tj\Downloads/alzheimer_data_tag_attP2-40_v7.xlsx",r"D:/saving/12/NEW/reprediction",i)
+
+```
+
+-> You can select all the threshold (or None) that you want to use is the list. Then, run this function.
+
+
+
+
+
 
 
 
