@@ -701,6 +701,8 @@ This paragraph explain how to use different tools to analyse classifier's accura
 
 
 
+### Confusion Matrixes
+
 
 
 
@@ -711,5 +713,7 @@ This paragraph explain how to use different tools to analyse classifier's accura
 # Contact 
 
 Adrien Bouchet (Intern M1 2023-2024)
+
 AgroParisTech
+
 adrien.bouchet@agroparistech.fr
